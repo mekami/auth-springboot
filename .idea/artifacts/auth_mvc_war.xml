@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="auth-mvc:war">
+    <output-path>$PROJECT_DIR$/auth-mvc/target</output-path>
+    <root id="archive" name="auth-mvc-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="auth-mvc:war exploded" />
+    </root>
+  </artifact>
+</component>
