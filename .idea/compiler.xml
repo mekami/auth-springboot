@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="auth-client" />
         <module name="auth-mvc" />
         <module name="auth-server" />
-        <module name="demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="auth-mvc" target="1.5" />
+      <module name="auth-client" target="1.8" />
+      <module name="auth-mvc" target="1.8" />
       <module name="auth-server" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="smart-sso" target="1.5" />
