@@ -1,1 +1,4 @@
 # auth-springboot
+这个是一个Spring boot+zokkeeper+swagger的分布式项目基本模板，主要是自己总结包括redis，Dubbo，mybatis在springboot的实践效果，构建数据库请查看auth-server的resources文件，如果要运行tomcat的服务，请根据pom.xml更换EtongOauthServerTomcat.java，直接运行会报错。
+
+有问题联系QQ 673201235
