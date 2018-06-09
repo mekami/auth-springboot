@@ -25,11 +25,11 @@ public class WebControllerAop {
 
     }
 
-    @Before("execution(* add*(..)) &&" + "args(object,..)")
-    public void addSomeBody(Object object){
-        System.err.println ("添加用户的某些实例数据:"+ JSON.parse(object.toString())  );
-
-    }
+//    @Before("execution(* add*(..)) &&" + "args(object,..)")
+//    public void addSomeBody(Object object){
+//        System.err.println ("添加用户的某些实例数据:"+ JSON.parse(object.toString())  );
+//
+//    }
     @Before("execution(* get*ById*(..)) &&" + "args(id,..)")
     public void updateSomeBody(Long id){
         System.err.println ("更新了用户的实例数据+" + id);

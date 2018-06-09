@@ -1,8 +1,9 @@
 package com.wei.authserver.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable{
 
         private int id;
         private String username;

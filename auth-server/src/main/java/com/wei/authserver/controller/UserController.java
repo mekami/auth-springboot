@@ -38,6 +38,10 @@ public class UserController {
      */
     @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer", paramType = "path")
+    @ApiResponses({
+            @ApiResponse(code=400,message="请求参数没填好"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
     @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
     public ResponseEntity<JsonResult> getUserById (@ValidateParam({ Validator.NOT_BLANK } )Integer id){
         JsonResult r = new JsonResult();
@@ -59,6 +63,10 @@ public class UserController {
      */
     @ApiOperation(value="获取用户列表", notes="获取用户列表")
     @RequestMapping(value = "users", method = RequestMethod.GET)
+    @ApiResponses({
+            @ApiResponse(code=400,message="请求参数没填好"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
     public ResponseEntity<JsonResult> getUserList (){
         JsonResult r = new JsonResult();
         try {
@@ -80,6 +88,10 @@ public class UserController {
      */
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
     @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
+    @ApiResponses({
+            @ApiResponse(code=400,message="请求参数没填好"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
     @RequestMapping(value = "user", method = RequestMethod.POST)
     public ResponseEntity<JsonResult> add (@RequestBody User user){
         JsonResult r = new JsonResult();
@@ -103,6 +115,10 @@ public class UserController {
      */
     @ApiOperation(value="删除用户", notes="根据url的id来指定删除用户")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long", paramType = "path")
+    @ApiResponses({
+            @ApiResponse(code=400,message="请求参数没填好"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
+    })
     @RequestMapping(value = "user/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<JsonResult> delete (@PathVariable(value = "id") Integer id){
         JsonResult r = new JsonResult();
@@ -128,6 +144,10 @@ public class UserController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long",paramType = "path"),
             @ApiImplicitParam(name = "user", value = "用户实体user", required = true, dataType = "User")
+    })
+    @ApiResponses({
+            @ApiResponse(code=400,message="请求参数没填好"),
+            @ApiResponse(code=404,message="请求路径没有或页面跳转路径不对")
     })
     @RequestMapping(value = "user/{id}", method = RequestMethod.PUT)
     public ResponseEntity<JsonResult> update (@PathVariable("id") Integer id, @RequestBody User user){
