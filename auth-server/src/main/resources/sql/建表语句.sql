@@ -15,8 +15,7 @@ CREATE TABLE `oauth_approvals` (
   `clientId` varchar(255) DEFAULT NULL,
   `scope` varchar(255) DEFAULT NULL,
   `status` varchar(10) DEFAULT NULL,
-  `expiresAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lastModifiedAt` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `expiresAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 drop table if exists oauth_client_details;
 CREATE TABLE `oauth_client_details` (
@@ -53,4 +52,12 @@ CREATE TABLE `oauth_refresh_token` (
   `token_id` varchar(255) DEFAULT NULL,
   `token` mediumblob,
   `authentication` mediumblob
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `oauth_user`;
+CREATE TABLE `oauth_user` (
+  `id` bigint(20) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `ctm` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

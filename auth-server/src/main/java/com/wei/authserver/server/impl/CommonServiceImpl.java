@@ -10,10 +10,10 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-@Service("commonService")
+@Service
 public class CommonServiceImpl implements CommonService {
 
-    @Resource(name = "commonDao")
+    @Resource
     protected CommonDao commonDao;
 
 

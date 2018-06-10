@@ -2,13 +2,14 @@ package com.wei.authserver.dao;
 
 
 import com.wei.authmvc.mybatis.PageInfo;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 
-
+@Mapper
 public interface CommonDao {
     /**
      *
