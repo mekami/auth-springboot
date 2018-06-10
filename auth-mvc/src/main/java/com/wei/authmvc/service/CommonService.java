@@ -85,6 +85,6 @@ public interface CommonService {
      * @param paraMap
      * @return
      */
-    List<Map<String,Object>>  selectMap(String statment, Map<String, Object> paraMap);
+    List<Map<String,Object>>  selectMap( Map<String, Object> paraMap);
 
 }

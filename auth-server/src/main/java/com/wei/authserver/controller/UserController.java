@@ -1,12 +1,15 @@
 package com.wei.authserver.controller;
 
 
+import com.wei.authmvc.service.CommonService;
 import com.wei.authmvc.validator.Validator;
 import com.wei.authmvc.validator.annotation.ValidateParam;
 import com.wei.authserver.bean.User;
 import com.wei.authserver.tool.JsonResult;
 import io.swagger.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +30,8 @@ import java.util.Map;
  */
 @RestController
 public class UserController {
+    @Autowired
+    public CommonService commonService;
 
     // 创建线程安全的Map
     static Map<Integer, User> users = Collections.synchronizedMap(new HashMap<Integer, User>());
@@ -168,9 +173,17 @@ public class UserController {
         return ResponseEntity.ok(r);
     }
 
-    @ApiIgnore//使用该注解忽略这个API
+//    @ApiIgnore//使用该注解忽略这个API
+    @ApiOperation(value="测试信息", notes="获取用户信息全部")
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
-    public String  jsonTest() {
-        return " hi you!";
+    public ResponseEntity<JsonResult>  jsonTest() {
+        JsonResult r = new JsonResult();
+        Map<String, Object> objectMap = new HashMap<String, Object>();
+
+        List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
+        result=commonService.selectMap(objectMap);
+        r.setResult(result);
+        r.setStatus("ok");
+        return ResponseEntity.ok(r);
     }
 }

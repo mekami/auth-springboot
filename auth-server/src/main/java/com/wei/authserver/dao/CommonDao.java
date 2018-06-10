@@ -84,10 +84,9 @@ public interface CommonDao {
      *
      * 指定查询使用的命名sql，查询结果封装成map
      *
-     * @param statment
      * @param paraMap
      * @return
      */
-    List<Map<String,Object>>  selectMap(String statment, Map<String, Object> paraMap);
+    List<Map<String,Object>>  selectMap( Map<String, Object> paraMap);
 
 }

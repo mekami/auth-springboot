@@ -57,9 +57,8 @@ public class CommonServiceImpl implements CommonService {
     }
 
     @Override
-    public List<Map<String, Object>> selectMap(String statement,
-                                               Map<String, Object> paraMap) {
-        return commonDao.selectMap(statement, paraMap);
+    public List<Map<String, Object>> selectMap(Map<String, Object> paraMap) {
+        return commonDao.selectMap( paraMap);
     }
 
 }
