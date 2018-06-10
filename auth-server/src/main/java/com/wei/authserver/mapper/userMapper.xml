@@ -7,7 +7,7 @@
 
     <select id="selectMap" resultType="map" parameterType="map">
         SELECT *
-        FROM SVN_USER
+        FROM Oauth_user
     </select>
 
 </mapper>
